@@ -56,6 +56,7 @@ class PJSipConf(object):
         print >> output, 'type=transport'
         print >> output, 'protocol=udp'
         print >> output, 'bind=0.0.0.0:5070'
+        print >> output, 'allow=all'
 
     def _gen_user(self, output):
         for line in self.user_generator.generate():
