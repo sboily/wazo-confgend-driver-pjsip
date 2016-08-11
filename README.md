@@ -11,4 +11,4 @@ Clone the repo and install it.
 
 By default PJSIP channel listen on 5070 udp port.
 
-Please a on your user the pjsip subroutine.
+Please add on your user the pjsip subroutine.
