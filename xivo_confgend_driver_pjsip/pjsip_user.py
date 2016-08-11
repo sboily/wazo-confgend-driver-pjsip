@@ -47,6 +47,12 @@ def from_mailbox(val):
 def from_dtlsenable(val):
     yield 'media_encryption = dtls'
 
+def set_dtmf_mode(val):
+    if val == 'rfc2833':
+        yield 'dtmf_mode = rfc4733'
+    else:
+        yield 'dtmf_mode = {}'.format(val)
+
 def set_timers(val):
     if val == 'originate':
         yield 'timers = always'
@@ -84,7 +90,7 @@ class PJSipUserGenerator(object):
 
 
     SIP_TO_PJSIP = {
-        'dtmfmode': 'dtmf_mode',
+        'dtmfmode': set_dtmf_mode,
         'nat': from_nat,
         'icesupport': 'ice_support',
         'autoframing': 'use_ptime',
