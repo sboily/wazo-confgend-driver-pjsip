@@ -3,7 +3,7 @@ Confgend driver for PJSIP
 
 This plugin use the sip configuration from chan_sip and convert it to chan_pjsip on live.
 
-WARNING: Use xivo >= 16.10
+WARNING: Use xivo >= 16.10, works only with users, trunk is not supported.
 
 Clone the repo and install it.
 
