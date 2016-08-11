@@ -15,10 +15,27 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>
 
+from StringIO import StringIO
+
 from xivo_dao.helpers.db_utils import session_scope
 from xivo_dao import asterisk_conf_dao
 
+from xivo_confgend_driver_pjsip.pjsip_user import PJSipUserGenerator
+
+
 class PJSipConfGenerator(object):
+
+    def __init__(self, config):
+        self._config = config
+
+    def generate(self):
+        user_generator = PJSipUserGenerator(asterisk_conf_dao)
+        config_generator = PJSipConf(user_generator)
+        output = StringIO()
+        config_generator.generate(output)
+        return output.getvalue()
+
+class PJSipConf(object):
 
     def __init__(self, user_generator):
         self.user_generator = user_generator
