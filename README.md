@@ -12,3 +12,5 @@ Comment with ";" all pjsip noload modules in /etc/asterisk/modules.conf.
 Restart your asterisk
 
     systemctl restart asterisk
+
+By default PJSIP channel listen on 5070 udp port.
