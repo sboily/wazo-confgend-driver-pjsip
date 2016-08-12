@@ -200,6 +200,8 @@ class PJSipUserGenerator(object):
             yield 'set_var = PICKUPMARK={}%{}'.format(row.number, row.context)
         if row.uuid:
             yield 'set_var = XIVO_USERUUID={}'.format(row.uuid)
+        if row.user_id:
+            yield 'set_var = XIVO_USERID={}'.format(row.user_id)
         if row.namedpickupgroup:
             yield 'named_pickup_group = {}'.format(row.namedpickupgroup)
         if row.namedpickupgroup:
