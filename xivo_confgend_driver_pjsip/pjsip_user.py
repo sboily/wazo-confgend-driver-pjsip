@@ -85,6 +85,9 @@ class PJSipUserGenerator(object):
                        'regseconds',
                        'lastms',
                        'name',
+                       'call-limit',
+                       'amaflags',
+                       'subscribemwi',
                        'fullcontact',
                        'ipaddr')
 
@@ -106,7 +109,7 @@ class PJSipUserGenerator(object):
         'cid_tag': 'callerid_tag',
         'trustpid': 'trust_id_inbound',
         'sendrpid': from_sendrpid,
-        'encrpytion': set_media_encryption,
+        'encryption': set_media_encryption,
         'avpf': 'use_avpf',
         'progressinband': from_progressinband,
         'callgroup': 'call_group',
@@ -134,6 +137,7 @@ class PJSipUserGenerator(object):
         'dtlscapath': 'dtls_ca_path',
         'dtlssetup': 'dtls_setup',
         'setvar': 'set_var',
+        'language': 'language',
     }
 
     def __init__(self, dao):
