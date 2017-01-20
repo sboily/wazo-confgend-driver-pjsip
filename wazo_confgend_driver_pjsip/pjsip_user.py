@@ -17,6 +17,9 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 from __future__ import unicode_literals
+import logging
+
+logger = logging.getLogger(__name__)
 
 def from_nat(val):
     if 'yes' in val:
@@ -182,9 +185,13 @@ class PJSipUserGenerator(object):
                 yield 'password = {}'.format(value)
 
     def format_endpoint_options(self, username, options):
+        transport = None
         yield 'type = endpoint'
-        yield 'transport = simpletrans'
         for name, value in options:
+            if name == 'transport':
+                if 'wss' in value:
+                    transport = 1
+                    yield 'transport = transport-wss'
             if name == 'allow':
                 yield 'disallow = all'
                 yield 'allow = {}'.format(value)
@@ -196,6 +203,8 @@ class PJSipUserGenerator(object):
                     yield '{} = {}'.format(self.SIP_TO_PJSIP[name], value)
         yield 'auth = {}'.format(username)
         yield 'aors = {}'.format(username)
+        if not transport:
+            yield 'transport = simpletrans'
 
     def format_user_options(self, row):
         if row.context:

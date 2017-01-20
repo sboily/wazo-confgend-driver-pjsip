@@ -20,7 +20,7 @@ from StringIO import StringIO
 from xivo_dao.helpers.db_utils import session_scope
 from xivo_dao import asterisk_conf_dao
 
-from xivo_confgend_driver_pjsip.pjsip_user import PJSipUserGenerator
+from wazo_confgend_driver_pjsip.pjsip_user import PJSipUserGenerator
 
 
 class PJSipConfGenerator(object):
@@ -55,6 +55,11 @@ class PJSipConf(object):
         print >> output, '[simpletrans]'
         print >> output, 'type=transport'
         print >> output, 'protocol=udp'
+        print >> output, 'bind=0.0.0.0:5070\n'
+
+        print >> output, '[transport-wss]'
+        print >> output, 'type=transport'
+        print >> output, 'protocol=wss'
         print >> output, 'bind=0.0.0.0:5070'
 
     def _gen_user(self, output):
