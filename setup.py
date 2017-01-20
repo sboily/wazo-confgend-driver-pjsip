@@ -6,17 +6,17 @@ from setuptools import find_packages
 
 
 setup(
-    name='xivo-confgend-driver-pjsip',
+    name='wazo-confgend-driver-pjsip',
     version='0.1',
-    description='XIVO Configuration Generator for PJSIP',
+    description='Wazo Configuration Generator for PJSIP',
     author='Sylvain Boily',
-    author_email='sboily@proformatique.com',
-    url='http://www.xivo.io/',
+    author_email='sylvainboilydroid@gmail.com',
+    url='http://www.wazo,community/',
     license='GPLv3',
     packages=find_packages(),
     entry_points={
         'xivo_confgend.asterisk.pjsip.conf': [
-            'xivo = xivo_confgend_driver_pjsip.pjsip_conf:PJSipConfGenerator'
+            'wazo = wazo_confgend_driver_pjsip.pjsip_conf:PJSipConfGenerator'
         ],
     },
 )

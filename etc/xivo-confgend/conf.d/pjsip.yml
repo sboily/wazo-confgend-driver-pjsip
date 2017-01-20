@@ -1,3 +1,2 @@
 plugins:
-  asterisk.pjsip.conf: xivo
-
+  asterisk.pjsip.conf: wazo

@@ -1,6 +1,6 @@
 #
-# Makefile for XiVO confgend pjsip driver
-# Copyright (C) 2016, Sylvain Boily
+# Makefile for Wazo confgend pjsip driver
+# Copyright (C) 2016-2017, Sylvain Boily
 #
 # This program is free software, distributed under the terms of
 # the GNU General Public License Version 3. See the LICENSE file
