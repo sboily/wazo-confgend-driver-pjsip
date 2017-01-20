@@ -192,6 +192,7 @@ class PJSipUserGenerator(object):
                 if 'wss' in value:
                     transport = 1
                     yield 'transport = transport-wss'
+                    yield 'media_use_received_transport = yes'
             if name == 'allow':
                 yield 'disallow = all'
                 yield 'allow = {}'.format(value)
