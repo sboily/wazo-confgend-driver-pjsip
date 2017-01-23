@@ -174,6 +174,7 @@ class PJSipUserGenerator(object):
 
     def format_aor_options(self):
         yield 'type = aor'
+        yield 'remove_existing = yes'
         yield 'max_contacts = 1'
 
     def format_auth_options(self, username, options):
