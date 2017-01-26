@@ -19,3 +19,4 @@ install:
 	sed -i '/\(^noload.*pj.*\)/s/^/;/' /etc/asterisk/modules.conf
 	systemctl restart xivo-confgend
 	systemctl restart asterisk
+	systemctl restart xivo-ctid

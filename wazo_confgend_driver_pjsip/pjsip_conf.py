@@ -61,6 +61,10 @@ class PJSipConf(object):
         print >> output, 'type=transport'
         print >> output, 'protocol=wss'
         print >> output, 'bind=0.0.0.0:5070'
+        print >> output, 'local_net=192.168.0.0/16'
+        print >> output, 'local_net=172.16.0.0/16'
+        print >> output, 'external_media_address=172.16.42.58'
+        print >> output, 'external_signaling_address=172.16.42.58'
 
     def _gen_user(self, output):
         for line in self.user_generator.generate():
