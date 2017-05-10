@@ -8,7 +8,7 @@ case "$1" in
         ;;
 
     package)
-        tar xvf dist/wazo_confgend_driver_pjsip-*.tar.gz -C ${pkgdir}
+        tar xvf dist/wazo-confgend-driver-pjsip-*.tar.gz -C ${pkgdir}
         cp -R etc ${pkgdir}/
         ;;
 
