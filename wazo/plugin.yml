@@ -1,0 +1,9 @@
+name: confgend-driver-pjsip
+namespace: sboily
+version: 0.0.1
+author: Sylvain Boily
+display_name: PJSIP driver
+tags:
+  - experimental
+  - internal
+homepage: https://github.com/sboily/wazo-confgend-driver-pjsip

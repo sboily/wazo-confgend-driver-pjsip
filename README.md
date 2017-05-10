@@ -9,6 +9,8 @@ Clone the repo and install it.
 
     make install
 
+If you have the market, please use the market, it's better.
+
 By default PJSIP channel listen on 5070 udp port.
 
 Please add on your user the pjsip subroutine named "pjsip".
