@@ -27,7 +27,7 @@ def from_nat(val):
         yield 'rewrite_contact = yes'
     if 'comedia' in val:
         yield 'rtp_symmetric = yes'
-    if 'force_port' in val:
+    if 'force_rport' in val:
         yield 'force_rport = yes'
         yield 'rewrite_contact = yes'
 
@@ -141,6 +141,9 @@ class PJSipUserGenerator(object):
         'dtlssetup': 'dtls_setup',
         'setvar': 'set_var',
         'language': 'language',
+        'max_audio_streams': 'max_audio_streams',
+        'max_video_streams': 'max_video_streams',
+        'webrtc': 'webrtc'
     }
 
     def __init__(self, dao):
