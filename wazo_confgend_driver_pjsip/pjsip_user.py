@@ -143,7 +143,8 @@ class PJSipUserGenerator(object):
         'language': 'language',
         'max_audio_streams': 'max_audio_streams',
         'max_video_streams': 'max_video_streams',
-        'webrtc': 'webrtc'
+        'webrtc': 'webrtc',
+        'rtcp_mux': 'rtcp_mux'
     }
 
     def __init__(self, dao):
