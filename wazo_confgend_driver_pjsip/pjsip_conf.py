@@ -76,4 +76,4 @@ class PJSipConf(object):
             print >> output, line
 
 def get_ip_address(interface):
-    return netifaces.ifaddresses(interface)[ni.AF_INET][0]['addr']
+    return netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr']
