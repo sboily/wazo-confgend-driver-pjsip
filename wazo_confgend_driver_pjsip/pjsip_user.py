@@ -153,7 +153,7 @@ class PJSipUserGenerator(object):
 
     def generate(self):
         for row in self.dao.find_sip_user_settings():
-            for line in self.format_row(row):
+            for line in self.format_row(row[0]):
                 yield line
 
     def format_row(self, row):
@@ -215,6 +215,7 @@ class PJSipUserGenerator(object):
 
     def format_user_options(self, row):
         if row.context:
+            yield 'context = {}'.format(row.context)
             yield 'set_var = TRANSFER_CONTEXT={}'.format(row.context)
         if row.number and row.context:
             yield 'set_var = PICKUPMARK={}%{}'.format(row.number, row.context)
@@ -222,12 +223,11 @@ class PJSipUserGenerator(object):
             yield 'set_var = XIVO_USERUUID={}'.format(row.uuid)
         if row.user_id:
             yield 'set_var = XIVO_USERID={}'.format(row.user_id)
-        if row.namedpickupgroup:
-            yield 'named_pickup_group = {}'.format(row.namedpickupgroup)
-        if row.namedpickupgroup:
-            yield 'named_call_group = {}'.format(row.namedcallgroup)
+        #if row.UserSIP.namedpickupgroup:
+        #    yield 'named_pickup_group = {}'.format(row.namedpickupgroup)
+        #if row.UserSIP.namedpickupgroup:
+        #    yield 'named_call_group = {}'.format(row.namedcallgroup)
         if row.mohsuggest:
             yield 'moh_suggest = {}'.format(row.mohsuggest)
         if row.mailbox:
             yield 'mailboxes = {}'.format(row.mailbox)
-
