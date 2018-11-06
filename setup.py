@@ -16,7 +16,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'xivo_confgend.asterisk.pjsip.conf': [
-            'wazo = wazo_confgend_driver_pjsip.pjsip_conf:PJSipConfGenerator'
+            'wazo = wazo_confgend_driver_pjsip.pjsip_conf:PJSIPConfGenerator'
         ],
     },
 )
