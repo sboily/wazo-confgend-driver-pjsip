@@ -344,7 +344,7 @@ class SipDBExtractor(object):
         if user:
             result += user + '@'
 
-        host_port = '{}:{}'.format(trunk_sip.host, trunk_sip.port)
+        host_port = '{}:{}'.format(trunk_sip.host, trunk_sip.port or 5060)
         result += host_port
 
         self._add_option(fields, ('contact', result))
