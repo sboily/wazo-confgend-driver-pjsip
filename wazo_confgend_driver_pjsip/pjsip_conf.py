@@ -207,7 +207,6 @@ class SipDBExtractor(object):
     ]
     sip_to_endpoint = [
         ('allowsubscribe', 'allow_subscribe'),
-        ('allow', 'allow'),
         ('allowtransfer', 'allow_transfer'),
         ('autoframing', 'use_ptime'),
         ('avpf', 'use_avpf'),
@@ -216,7 +215,6 @@ class SipDBExtractor(object):
         ('cid_tag', 'callerid_tag'),
         ('cos_audio', 'cos_audio'),
         ('cos_video', 'cos_video'),
-        ('disallow', 'disallow'),
         ('fromdomain', 'from_domain'),
         ('fromdomain', 'from_domain'),
         ('fromuser', 'from_user'),
@@ -558,6 +556,11 @@ class SipDBExtractor(object):
             self._add_option(fields, pair)
         for pair in self._convert_recordofffeature(self._general_settings_dict):
             self._add_option(fields, pair)
+
+        for row in self._static_sip:
+            key = row['var_name']
+            if key in ('allow', 'disallow'):
+                self._add_option(fields, (key, row['var_val']))
 
         return Section(
             name='wazo-general-endpoint',
