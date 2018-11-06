@@ -207,6 +207,7 @@ class SipDBExtractor(object):
     ]
     sip_to_endpoint = [
         ('allowsubscribe', 'allow_subscribe'),
+        ('allow', 'allow'),
         ('allowtransfer', 'allow_transfer'),
         ('autoframing', 'use_ptime'),
         ('avpf', 'use_avpf'),
@@ -215,6 +216,7 @@ class SipDBExtractor(object):
         ('cid_tag', 'callerid_tag'),
         ('cos_audio', 'cos_audio'),
         ('cos_video', 'cos_video'),
+        ('disallow', 'disallow'),
         ('fromdomain', 'from_domain'),
         ('fromdomain', 'from_domain'),
         ('fromuser', 'from_user'),
