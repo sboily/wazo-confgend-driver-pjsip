@@ -334,6 +334,7 @@ class SipDBExtractor(object):
         host = trunk_sip.host
         if host == 'dynamic':
             self._add_option(fields, ('max_contacts', 1))
+            self._add_option(fields, ('remove_existing', 'yes'))
 
         result = 'sip:'
         # More difficult case. The host will be either a hostname or
