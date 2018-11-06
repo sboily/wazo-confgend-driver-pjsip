@@ -1,6 +1,6 @@
 name: confgend-driver-pjsip
 namespace: sboily
-version: 0.0.2
+version: 0.0.3
 author: Sylvain Boily
 display_name: PJSIP driver
 tags:
